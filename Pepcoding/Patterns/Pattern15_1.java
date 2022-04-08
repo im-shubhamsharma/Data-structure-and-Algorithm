@@ -7,6 +7,7 @@
 //        3  3  3  3  3	
 // 	         4  4  4	
 // 	    	    5	
+
 import java.util.Scanner;
 
 public class Pattern15_1{
@@ -16,7 +17,7 @@ public class Pattern15_1{
 
         int sp = n/2;
         int st = 1;
-  
+
         int num = 1;
 
         for(int i=1; i<=n; i++){
