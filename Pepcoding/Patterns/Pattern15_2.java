@@ -14,9 +14,8 @@ public class Pattern15_2{
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        int sp = 2;
+        int sp = n/2;
         int st = 1;
-
         int num = 1;
 
         for(int i=1; i<=n; i++){

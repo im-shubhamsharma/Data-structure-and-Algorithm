@@ -2,14 +2,14 @@
 // 5
 // Sample Output
 // 	        	1	
-//   	     2  3  4	
-//        3  4  5  6  7	
-// 	         2  3  4	
+//   	     2  3  2	
+//        3  4  5  4  3	
+// 	         2  3  2	
 // 	    	    1	
 
 import java.util.Scanner;
 
-public class Pattern15_3{
+public class Pattern15_4{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -29,7 +29,11 @@ public class Pattern15_3{
             int newNum = num;
             for(int j=1; j<=st; j++){
                 System.out.print(newNum + "\t");
-                newNum++;
+                if(j <= st/2){
+                    newNum++;
+                 }else{
+                    newNum--;
+                 }
             }
             
             if(i <= n/2){

@@ -7,14 +7,6 @@
 //        3  3  3  3  3	
 // 	         4  4  4	
 // 	    	    5	
-
-// 	        	1	
-//   	     2  3  2	
-//        3  4  5  4  3	
-// 	         2  3  2	
-// 	    	    1	
-
-
 import java.util.Scanner;
 
 public class Pattern15_1{
@@ -22,9 +14,9 @@ public class Pattern15_1{
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        int sp = 2;
+        int sp = n/2;
         int st = 1;
-
+  
         int num = 1;
 
         for(int i=1; i<=n; i++){
