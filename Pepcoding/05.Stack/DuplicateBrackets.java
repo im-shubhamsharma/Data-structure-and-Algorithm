@@ -27,6 +27,5 @@ public class DuplicateBrackets{
            }
         }
         System.out.println("false");
-        ( ( (a+b)+( (c+(d+e) )+f ))
     }
 }
