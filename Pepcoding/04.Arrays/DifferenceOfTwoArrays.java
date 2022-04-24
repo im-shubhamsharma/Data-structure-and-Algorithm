@@ -55,15 +55,15 @@ public class DifferenceOfTwoArrays {
         int idx = 0;
         while(idx<diff.length){
             if(diff[idx]==0){
-
+               //condition to skip all the starting zeroes;
             }else{
                 break;
             }
             idx++;
         }
 
-        while(idx<diff.length){
-            System.out.println(diff[idx]);
+        while(idx<diff.length){     
+            System.out.println(diff[idx]);  //loop to print resultant array
             idx++;
         }
 
