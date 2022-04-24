@@ -12,30 +12,37 @@ public class BrokenEconomy {
         }
         
         int d = sc.nextInt();
-        // System.out.println(ceil(arr,d));
-        System.out.println(floor(arr,d));
+        
+        ceilFloor(arr,d);
+
 
     }    
 
-    public static int floor(int[] arr, int d){
+    public static void ceilFloor(int[] arr, int d){
         int left = 0;
         int right = arr.length-1;
 
         int floor = -1;
+        int ceil = -1;
 
         while(left<=right){
             int mid = (left+right)/2;
 
             if(arr[mid]==d){
-                return arr[mid];
+                ceil = floor = mid;
+                System.out.println(arr[ceil]);
+                System.out.println(arr[floor]);
+                return;
             }else if(d>arr[mid]){
-                floor = arr[mid];
+                floor = mid;
                 left = mid+1;
             }else if(d<arr[mid]){
                 right = mid-1;
+                ceil = mid;
             }
         }
 
-        return floor;
+        System.out.println(arr[ceil]);
+        System.out.println(arr[floor]);
     }
 }
