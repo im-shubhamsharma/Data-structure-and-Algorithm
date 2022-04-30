@@ -26,10 +26,42 @@ public class NextGreaterElementToRight {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
+        int arr[] = new int[n];
+
+        for(int i=0; i<arr.length; i++){
+            arr[i] = scn.nextInt();
+        }
 
         Stack<Integer> st = new Stack<>();
-        
 
+        int newArr[] = new int[n];
+
+
+        newArr[arr.length-1] = -1;
+        st.push(arr[arr.length-1]);
+
+        
+        for(int i=arr.length-2; i>=0; i--){
+            int num = arr[i];
+
+            while(st.size() > 0 && num>st.peek()){
+                st.pop();
+            }
+
+            if(st.size()==0){
+                newArr[i]=-1;
+            }else{
+                newArr[i]=st.peek();
+            }
+            st.push(num);
+        }
+
+
+        //loop to display array
+        for(int i=0; i<newArr.length; i++){
+            System.out.println(newArr[i]);
+        }
+       
 
     }
 }
