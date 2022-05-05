@@ -56,7 +56,7 @@ public class LargestAreaHistogram {
 
             while(str.size()>0 && num <= arr[str.peek()]){
                   str.pop();
-            }
+            } 
 
             if(str.size() == 0){ 
                 lb[i] = -1;
@@ -79,3 +79,4 @@ public class LargestAreaHistogram {
         return maxArea;
     }
 }
+  
