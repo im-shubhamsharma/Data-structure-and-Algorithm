@@ -12,6 +12,8 @@ public class ExitPointOfAMatrix {
 
         inputArray(arr, sc);
 
+        ExitPointOfAMatrix(arr);
+
 
     }
 
@@ -27,15 +29,12 @@ public class ExitPointOfAMatrix {
         int nr = arr.length;   //number of rows
         int nc = arr[0].length;   //number of columns
         
- 
         int i=0;
         int j=0;
         int dir = 0;
  
         int row = i;
         int col = j;
- 
- 
  
         while(i>= 0 && i<nr && j>= 0 && j<nc){
          dir = (dir + arr[i][j])%4;
