@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public int[] sortedSquares(int[] nums) {
         int p1 = 0, p2 = nums.length-1, idx=nums.length-1;
