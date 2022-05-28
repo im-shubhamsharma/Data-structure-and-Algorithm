@@ -3,10 +3,15 @@ var missingNumber = function(nums) {
         if(nums.includes(i)){
             
         }else{
-            console.log(i)
+            // console.log(i)
         }
     }
 };
 
 nums = [0,1,2,5,3,6,7,8,9];
 missingNumber(nums);   //output 4
+
+
+const c=1;
+c=2;
+console.log(c);
