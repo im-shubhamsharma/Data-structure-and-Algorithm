@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class printStairPaths {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner (System.in);
+        int n = sc.nextInt();
+        printStairPaths(n,"");
+    }
+
+    public static void printStairPaths(int n, String path) {
+        if(n==0){
+            System.out.println(path);
+            return;
+        }
+
+        if(n<0){
+            return;
+        }
+
+        //1 Step
+        printStairPaths(n-1, path+1);
+
+        //2 Step
+        printStairPaths(n-2, path+2);
+
+        //3 Step
+        printStairPaths(n-3, path+3);
+    }
+
+}
