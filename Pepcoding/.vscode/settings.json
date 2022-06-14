@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "08.Sorting",
         "07.Recursion And Backtracking",
-        "08.Sorting"
+        "10.Linked List"
     ]
 }

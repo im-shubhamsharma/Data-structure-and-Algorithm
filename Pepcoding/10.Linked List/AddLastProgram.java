@@ -1,4 +1,4 @@
-public class AddFirstProgram {
+public class AddLastProgram {
     private static class Node {
         int data;
         Node next;
@@ -30,14 +30,14 @@ public class AddFirstProgram {
             size = 0;
         }
 
-        public void addFirst(int val) {
+        public void addLast(int val) {
             Node node = new Node(val);
 
             if (this.size == 0) {
                 this.head = this.tail = node;
             } else {
-                node.next = this.head;
-                this.head = node;
+                tail.next = node;
+                this.tail = node;
             }
             this.size++;
         }
@@ -57,11 +57,11 @@ public class AddFirstProgram {
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.addFirst(10);
-        ll.addFirst(20);
-        ll.addFirst(30);
-        ll.addFirst(35);
-        ll.addFirst(40);
+        ll.addLast(10);
+        ll.addLast(20);
+        ll.addLast(30);
+        ll.addLast(35);
+        ll.addLast(40);
 
         System.out.println(ll.size());
         ll.display();
