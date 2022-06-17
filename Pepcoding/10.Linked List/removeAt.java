@@ -1,11 +1,4 @@
-import java.util.Scanner;
-
-import javax.security.auth.PrivateCredentialPermission;
-import javax.swing.text.DefaultStyledDocument.ElementSpec;
-
-import org.w3c.dom.Node;
-
-public class AddAtIndex {
+public class removeAt {
     private static class Node {
         int data;
         Node next;
@@ -90,6 +83,66 @@ public class AddAtIndex {
 
         }
 
+        public void removeFirst() {
+            if (size == 0) {
+                System.out.println("List is empty");
+            } else if (size == 1) {
+                this.head = this.tail = null;
+                size = 0;
+            } else {
+                this.head = this.head.next;
+                size--;
+            }
+        }
+
+        public void removeLast() {
+            if (size == 0) {
+                System.out.println("List is empty");
+            } else if (size == 1) {
+                this.head = this.tail = null;
+                size = 0;
+            } else {
+                Node curr = this.head;
+                while (curr.next != tail) {
+                    curr = curr.next;
+                }
+                this.tail = curr;
+                tail.next = null;
+                size--;
+            }
+        }
+
+        public void removeAt(int idx) {
+            // write your code here
+            if (size == 0) {
+                System.out.println("List is empty");
+                return;
+            }
+            if (idx < 0 || idx >= size) {
+                System.out.println("Invalid arguments");
+                return;
+            }
+            if (idx == 0) {
+                removeFirst();
+                return;
+            }
+            if (idx == size - 1) {
+                removeLast();
+                return;
+            }
+
+            Node curr = this.head;
+            Node prev = null;
+            while (idx > 0) {
+                prev = curr;
+                curr = curr.next;
+                idx--;
+            }
+            prev.next = curr.next;
+            curr.next = null;
+            this.size--;
+        }
+
         public int size() {
             return this.size;
         }
@@ -111,8 +164,21 @@ public class AddAtIndex {
         ll.addLast(35);
         ll.addFirst(40);
         ll.addAtIndex(0, 1000);
-        ll.addAtIndex(9, 1000);
+        ll.addAtIndex(4, 2000);
+        // ll.addAtIndex(9, 1000);
 
+        System.out.println(ll.size());
+        System.out.println("-----------------");
+        ll.display();
+
+        System.out.println("``````````````");
+        ll.removeLast();
+        System.out.println(ll.size());
+        System.out.println("``````````````");
+        ll.display();
+
+        System.out.println("-----------------");
+        ll.removeAt(3);
         System.out.println(ll.size());
         System.out.println("-----------------");
         ll.display();

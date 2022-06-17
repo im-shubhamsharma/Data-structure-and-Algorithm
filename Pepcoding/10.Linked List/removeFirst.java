@@ -1,11 +1,4 @@
-import java.util.Scanner;
-
-import javax.security.auth.PrivateCredentialPermission;
-import javax.swing.text.DefaultStyledDocument.ElementSpec;
-
-import org.w3c.dom.Node;
-
-public class AddAtIndex {
+public class removeFirst {
     private static class Node {
         int data;
         Node next;
@@ -90,6 +83,18 @@ public class AddAtIndex {
 
         }
 
+        public void removeFirst() {
+            if (size == 0) {
+                System.out.println("List is empty");
+            } else if (size == 1) {
+                this.head = this.tail = null;
+                size = 0;
+            } else {
+                this.head = this.head.next;
+                size--;
+            }
+        }
+
         public int size() {
             return this.size;
         }
@@ -105,14 +110,37 @@ public class AddAtIndex {
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
+
+        System.out.println("-----------------");
+        ll.removeFirst();
+        System.out.println(ll.size());
+        System.out.println("-----------------");
+        ll.display();
+
         ll.addFirst(10);
+
+        System.out.println("*****************");
+        System.out.println(ll.size());
+        ll.display();
+        ll.removeFirst();
+        System.out.println(ll.size());
+        System.out.println("*****************");
+        ll.display();
+
         ll.addFirst(20);
         ll.addFirst(30);
         ll.addLast(35);
         ll.addFirst(40);
         ll.addAtIndex(0, 1000);
-        ll.addAtIndex(9, 1000);
+        ll.addAtIndex(4, 2000);
+        // ll.addAtIndex(9, 1000);
 
+        System.out.println(ll.size());
+        System.out.println("-----------------");
+        ll.display();
+
+        System.out.println("-----------------");
+        ll.removeFirst();
         System.out.println(ll.size());
         System.out.println("-----------------");
         ll.display();
