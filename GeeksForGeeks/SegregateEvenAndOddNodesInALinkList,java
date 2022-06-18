@@ -1,0 +1,37 @@
+class Node{
+    int data;
+    Node next;
+    
+    Node(int x){
+        data = x;
+        next = null;
+    }
+}
+
+class Solution{
+    Node divide(int N, Node head){
+        // code here
+        Node dEven = new Node(-1);
+        Node dOdd = new Node(-1);
+        
+        Node evenTail = dEven, oddTail = dOdd, curr=head;
+        
+        while(curr!=null){
+            if(curr.data % 2 == 0){
+                evenTail.next = curr;
+                evenTail = evenTail.next;
+            }else{
+                oddTail.next = curr;
+                oddTail = oddTail.next;
+            }
+            curr = curr.next;    
+        }
+        oddTail.next = null;
+        
+        evenTail.next = dOdd.next;
+    
+        head = dEven.next;
+        
+        return head;
+    }
+} 
