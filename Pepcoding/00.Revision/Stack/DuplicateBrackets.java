@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.Stack;
 
 public class DuplicateBrackets {
 
@@ -9,9 +10,9 @@ public class DuplicateBrackets {
         Stack<Character> st = new Stack<>();
 
         for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);
+            char ch = str.charAt(i);
 
-            if (c == ')') {
+            if (ch == ')') {
                 if (st.peek() == '(') {
                     System.out.println("true");
                     return;
@@ -21,8 +22,10 @@ public class DuplicateBrackets {
                     }
                     st.pop();
                 }
+            } else if (ch == ' ') {
+                continue;
             } else {
-                st.push(c);
+                st.push(ch);
             }
         }
         System.out.println("false");
