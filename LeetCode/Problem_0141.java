@@ -1,4 +1,4 @@
-class Solution {
+class Problem_0141 {
     public class ListNode {
         int val;
         ListNode next;
@@ -16,9 +16,7 @@ class Solution {
         }
     }
 
-    public ListNode detectCycle(ListNode head) {
-        if(head == null) return null;
-        
+    public boolean hasCycle(ListNode head) {
         ListNode slow = head, fast = head;
         
         while(fast != null && fast.next != null){
@@ -26,17 +24,10 @@ class Solution {
             fast = fast.next.next;
             
             if(slow==fast){
-                fast = head;
-                
-                while(slow != fast){
-                    slow = slow.next;
-                    fast = fast.next;
-                }
-                return slow;
+                return true;
             }
         }
-        
-        return null;
+        return false;
     }
 
-} 
+}    

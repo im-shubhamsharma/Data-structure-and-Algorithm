@@ -1,4 +1,4 @@
-class Solution {
+class Problem_0977 {
     public int[] sortedSquares(int[] nums) {
         int p1 = 0, p2 = nums.length-1, idx=nums.length-1;
         int sqArr[] = new int[nums.length];

@@ -1,4 +1,4 @@
-class Solution {
+class Problem_0328 {
     public class ListNode {
         int val;
         ListNode next;

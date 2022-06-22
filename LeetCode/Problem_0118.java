@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Solution {
+class Problem_0118 {
     public List<List<Integer>> generate(int numRows) {
         
         List<List<Integer>> ans = new ArrayList<>();

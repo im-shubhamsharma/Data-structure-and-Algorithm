@@ -1,4 +1,4 @@
-class Solution {
+class Problem_0387 {
     public int firstUniqChar(String s) {
 
        int arr[] = new int[26];
