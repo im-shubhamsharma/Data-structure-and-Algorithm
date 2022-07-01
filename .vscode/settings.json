@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "Pepcoding/07.Recursion And Backtracking",
         "LeetCode",
-        "Pepcoding/07.Recursion And Backtracking"
+        "Pepcoding/12.Generic Tree"
     ]
 }
