@@ -1,6 +1,6 @@
+// Find node to root path in binary tree
 import java.util.*;
-
-public class constructBT {
+public class findNodeToRootPath {
     public static class Node {
         int data;
         Node left, right;
@@ -54,19 +54,6 @@ public class constructBT {
         return root;
     }
 
-    //construct using recursion - additonal
-    static int idx=0;
-    public static Node construct1(Integer arr[]){
-        if(arr[idx]==null){
-            idx++;
-            return null;
-        }
-        Node node = new Node (arr[idx++]);
-        node.left = construct1(arr);
-        node.right = construct1(arr);
-        return node;
-    }
-
     public static void display(Node node){
         if(node == null) return;
 
@@ -79,10 +66,51 @@ public class constructBT {
         display(node.right);
     }
 
+    public static boolean find(Node node, int data){
+        if(node == null) return false;
+        if(node.data == data) return true;
+
+        boolean ans =  find(node.left, data);
+        if(ans) return true;
+        boolean ans1 =  find(node.right, data);
+        if(ans1) return true;
+
+        return false;
+    }
+    
+    static ArrayList<Integer> path;
+    public static boolean nodeToRootPath(Node node, int data){
+        if(node == null) return false;
+
+        if(node.data == data) {
+            path.add(node.data);
+            return true;
+        }
+
+        boolean ans =  nodeToRootPath(node.left, data);
+        if(ans){
+            path.add(node.data);
+            return true;
+        }
+
+        boolean ans1 =  nodeToRootPath(node.right, data);
+        if(ans1){
+            path.add(node.data);
+            return true;
+        }
+
+        return false;
+    }
+
     public static void main(String args[]){
         Integer arr[] = {10,20,40,null,null,50,70,null,null,null,30,null,60,null,null};
         // Node root = construct(arr);
-        Node root = construct1(arr);
+        Node root = construct(arr);
         display(root);
+        int val = 60;
+        path = new ArrayList<>();
+        System.out.println(find(root, val));
+        nodeToRootPath(root, val);
+        System.out.println(path);
     }
 }

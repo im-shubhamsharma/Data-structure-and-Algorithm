@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class constructBT {
+public class printSingleChildNodes {
     public static class Node {
         int data;
         Node left, right;
@@ -8,15 +8,6 @@ public class constructBT {
         Node(int val) {
             data = val;
             left = right = null;
-        }
-    }
-
-    public static class Pair {
-        Node node;
-        int state;
-
-        Pair(Node node) {
-            this.node = node;
         }
     }
 
@@ -54,35 +45,49 @@ public class constructBT {
         return root;
     }
 
-    //construct using recursion - additonal
-    static int idx=0;
-    public static Node construct1(Integer arr[]){
-        if(arr[idx]==null){
-            idx++;
-            return null;
+    public static class Pair {
+        Node node;
+        int state;
+
+        Pair(Node node) {
+            this.node = node;
         }
-        Node node = new Node (arr[idx++]);
-        node.left = construct1(arr);
-        node.right = construct1(arr);
-        return node;
     }
 
-    public static void display(Node node){
-        if(node == null) return;
+    public static void display(Node node) {
+        if (node == null)
+            return;
 
-        if(node.left != null) System.out.print(node.left.data);
-        System.out.print(" <-- "+node.data+" --> ");
-        if(node.right != null) System.out.print(node.right.data);
+        if (node.left != null)
+            System.out.print(node.left.data);
+        System.out.print(" <-- " + node.data + " --> ");
+        if (node.right != null)
+            System.out.print(node.right.data);
         System.out.println();
 
         display(node.left);
         display(node.right);
     }
 
-    public static void main(String args[]){
-        Integer arr[] = {10,20,40,null,null,50,70,null,null,null,30,null,60,null,null};
-        // Node root = construct(arr);
-        Node root = construct1(arr);
-        display(root);
+    public static void singleChildNodes(Node node){
+        if(node == null) return;
+
+        if(node.left != null && node.right == null){
+            System.out.println(node.left.data);
+        }
+        if(node.left == null && node.right != null){
+            System.out.println(node.right.data);
+        }
+
+        singleChildNodes(node.left);
+        singleChildNodes(node.right);
+    }
+
+    public static void main(String args[]) {
+        Integer arr[] = { 10, 20, 40, null, null, 50, 70, null, null, null, 30, null, 60, null, null };
+        Node root = construct(arr);
+        // display(root);
+        singleChildNodes(root);
+
     }
 }
