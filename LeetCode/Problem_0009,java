@@ -1,0 +1,20 @@
+public class Problem_0009 {
+   class Solution {
+    public boolean isPalindrome(int x) {
+        
+        if(x<0 || (x%10 == 0 && x!=0)){ //this will eliminate all negative numbers and numbers ending with zero.
+          return false;
+        }
+        
+        int reversed = 0;
+        
+        while(x > reversed){
+          int temp = x%10;  
+          reversed = reversed*10 + temp;
+          x = x/10;
+        }
+        
+        return x == reversed || x==reversed/10;
+      }
+    }
+}
